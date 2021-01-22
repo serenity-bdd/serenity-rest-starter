@@ -13,15 +13,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.2.RELEASE</version>
+        <version>2.4.2</version>
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.91</serenity.version>
-        <serenity.maven.version>2.0.91</serenity.maven.version>
-        <serenity.cucumber.version>1.0.30</serenity.cucumber.version>
-        <cucumber.version>4.8.0</cucumber.version>
+        <serenity.version>2.3.12</serenity.version>
+        <serenity.maven.version>2.3.12</serenity.maven.version>
+        <serenity.cucumber.version>2.3.12</serenity.cucumber.version>
         <logback.version>1.2.3</logback.version>
         <encoding>UTF-8</encoding>
         <tags></tags>
@@ -56,31 +55,40 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-        <!--
-          - To use Cucumber 4, exclude the old Cucumber 2 cucumber-core dependency from the serenity-core dependency
-          - and include the Cucumber 4 cucumber-java and cucumber-junit dependencies.
-        -->
+        <!-- libraries used directly from serenity-core, to avoid conflicts with spring-boot-starter-parent -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>4.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>xml-path</artifactId>
+            <version>4.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>3.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-xml</artifactId>
+            <version>3.0.6</version>
+        </dependency>
+        <!-- libraries used directly from serenity-core END -->
+
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.cucumber</groupId>
-                    <artifactId>cucumber-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
@@ -108,14 +116,14 @@
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber4</artifactId>
+            <artifactId>serenity-cucumber6</artifactId>
             <version>${serenity.cucumber.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -146,15 +154,9 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
         <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>1.9.13</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.7.0</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -170,7 +172,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.7.0</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -248,7 +250,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.0.2.RELEASE</version>
+                <version>2.4.2</version>
                 <executions>
                     <execution>
                         <goals>
