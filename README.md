@@ -1,6 +1,6 @@
-# Getting started with REST API testing with Serenity and Cucumber 4
+# Getting started with REST API testing with Serenity and Cucumber 6
 
-This tutorial show you how to get started with REST-API testing using Serenity and Cucumber 4. 
+This tutorial show you how to get started with REST-API testing using Serenity and Cucumber 6. 
 
 ## Get the code
 
@@ -33,65 +33,6 @@ src
       + templates                         Freemarker templates and properties files                
 
 ```
-
-### Adding the Cucumber 4 dependency
-Serenity seamlessly supports both Cucumber 2.x and Cucumber 4. 
-However, this flexibility requires a little tweaking in the build dependencies.
-
-If you are using Maven, you need to do the following:
-- exclude the default `cucumber-core` dependency from your `serenity-core` dependency
-- Replace your `serenity-cucumber` dependency with the `serenity-cucumber4` dependency
-- Add dependencies on the Cucumber 4.x version of `cucumber-java` and `cucumber-junit` into your project
-
-An example of the correctly configured dependencies is shown below:
-```xml
-<dependency>
-    <groupId>net.serenity-bdd</groupId>
-    <artifactId>serenity-core</artifactId>
-    <version>2.0.38</version>
-    <scope>test</scope>
-    <exclusions>
-        <exclusion>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-core</artifactId>
-        </exclusion>
-    </exclusions>
-</dependency>
-<dependency>
-    <groupId>net.serenity-bdd</groupId>
-    <artifactId>serenity-cucumber4</artifactId>
-    <version>1.0.4</version>
-    <scope>test</scope>
-</dependency>
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>4.2.0</version>
-</dependency>
-<dependency>
-    <groupId>io.cucumber</groupId>
-    <artifactId>cucumber-junit</artifactId>
-    <version>4.2.0</version>
-</dependency>
-```
-
-If you are using Gradle, you need to ensure that the 4.x version of `cucumber-core` is used using the _resolutionStrategy_ element, and also add the Cucumber 4.x version of `cucumber-java` and `cucumber-junit` dependencies as mentioned above:
-```Gradle
-configurations.all {
-    resolutionStrategy {
-        force "io.cucumber:cucumber-core:4.2.0"
-    }
-}
-
-dependencies {
-    testCompile "net.serenity-bdd:serenity-core:2.0.38",
-                "net.serenity-bdd:serenity-cucumber4:1.0.4",
-                "io.cucumber:cucumber-core:4.2.0",
-                "io.cucumber:cucumber-junit:4.2.0"
-}
-```
-
-In the rest of this article, we will walk through some of the highlights of both versions. Let’s start off with the version on the master branch, which uses lightweight page objects and actions.
 
 ## A simple GET scenario
 The project comes with two simple scenarios, one that illustrates a GET, and a second that illustrates a POST.
