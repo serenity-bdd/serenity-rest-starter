@@ -1,8 +1,0 @@
-{
-  "id": "${id}",
-  "security": "${security}",
-  "buySell": "${buySell}",
-  "quantity": ${quantity},
-  "priceInCents": ${priceInCents},
-  "totalCostInCents": ${totalCostInCents}
-}
