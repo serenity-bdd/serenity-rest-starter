@@ -18,36 +18,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.3.12</serenity.version>
-        <serenity.maven.version>2.3.12</serenity.maven.version>
-        <serenity.cucumber.version>2.3.12</serenity.cucumber.version>
+        <serenity.version>2.4.24</serenity.version>
+        <serenity.maven.version>2.4.24</serenity.maven.version>
+        <serenity.cucumber.version>2.4.24</serenity.cucumber.version>
         <logback.version>1.2.3</logback.version>
         <encoding>UTF-8</encoding>
         <tags></tags>
         <parallel.tests>4</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
     </properties>
-
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray</name>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray-plugins</name>
-            <url>https://jcenter.bintray.com</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <dependencies>
         <dependency>
@@ -65,12 +44,12 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
-            <version>4.3.2</version>
+            <version>4.3.3</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
-            <version>4.3.2</version>
+            <version>4.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
