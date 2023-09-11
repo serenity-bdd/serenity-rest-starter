@@ -11,10 +11,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.4.51</serenity.version>
-        <serenity.maven.version>2.4.51</serenity.maven.version>
-        <serenity.cucumber.version>2.4.51</serenity.cucumber.version>
-        <logback.version>1.2.3</logback.version>
+        <serenity.version>4.0.1</serenity.version>
+        <serenity.maven.version>4.0.1</serenity.maven.version>
+        <serenity.cucumber.version>4.0.1</serenity.cucumber.version>
+        <logback.version>1.4.11</logback.version>
         <encoding>UTF-8</encoding>
         <tags></tags>
         <parallel.tests>4</parallel.tests>
@@ -61,7 +61,7 @@
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber6</artifactId>
+            <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.cucumber.version}</version>
             <scope>test</scope>
         </dependency>
@@ -69,31 +69,25 @@
         <!-- libraries used directly from serenity-core-->
         <dependency>
             <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured-common</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.3.2</version>
+            <version>5.3.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
-            <version>4.3.3</version>
+            <version>5.3.1</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
-            <version>4.3.3</version>
+            <version>5.3.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
-            <version>3.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-xml</artifactId>
-            <version>3.0.6</version>
-        </dependency>
-
         <!-- General test libraries -->
         <dependency>
             <groupId>junit</groupId>
@@ -155,8 +149,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>

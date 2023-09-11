@@ -1,8 +1,7 @@
 package starter.postcodes;
 
-import io.restassured.RestAssured;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
-import net.thucydides.core.annotations.Step;
 
 public class PostCodeAPI {
 
